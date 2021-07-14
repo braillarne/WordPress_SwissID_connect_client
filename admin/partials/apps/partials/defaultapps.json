@@ -158,7 +158,10 @@
 	"openidconnect": {
 		"label":"Custom OpenID Connect App", "type":"openidconnect", "image":"customapp.png", "scope": "", "authorize": "", "token": "", "userinfo": "", "guide":""
 	},
+	"swissidtest": {
+		"label":"SwissID Test", "type":"openidconnect", "image":"swissidtest.png", "scope": "openid", "authorize": "https://account.swissid.ch:443/idp/oauth2/authorize", "token": "https://account.sandbox.pre.swissid.ch/idp/oauth2/access_token", "userinfo": "https://account.sandbox.pre.swissid.ch/idp/oauth2/userinfo", "guide":""
+	},
 	"swissid": {
-		"label":"SwissID", "type":"openidconnect", "image":"swissid.png", "scope": "", "authorize": "", "token": "", "userinfo": "", "guide":""
+		"label":"SwissID", "type":"openidconnect", "image":"swissid.png", "scope": "openid", "authorize": "https://account.swissid.ch:443/idp/oauth2/authorize", "token": "https://account.swissid.ch/idp/oauth2/access_token", "userinfo": "https://account.swissid.ch/idp/oauth2/userinfo", "guide":""
 	}
 }
