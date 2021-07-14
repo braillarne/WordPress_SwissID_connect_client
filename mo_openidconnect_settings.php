@@ -444,12 +444,14 @@ class mo_openidconnect {
 			$scope = '';
 			$clientid = '';
 			$clientsecret = '';
+			$redirecturi = '';
 			if($this->mo_oauth_check_empty_or_null($_POST['mo_oauth_client_id']) || $this->mo_oauth_check_empty_or_null($_POST['mo_oauth_client_secret'])) {
 				update_option( 'message', 'Please enter valid Client ID and Client Secret.');
 				$this->mo_oauth_show_error_message();
 				return;
 			} else{
 				$scope = stripslashes( $_POST['mo_oauth_scope'] );
+				$redirecturi = stripslashes( $_POST['mo_oauth_redirecturi'] );
 				$clientid = stripslashes( trim( $_POST['mo_oauth_client_id'] ) );
 				$clientsecret = stripslashes( trim( $_POST['mo_oauth_client_secret'] ) );
 				$appname = stripslashes( $_POST['mo_oauth_custom_app_name'] );
@@ -491,7 +493,7 @@ class mo_openidconnect {
 				$newapp['clientid'] = $clientid;
 				$newapp['clientsecret'] = $clientsecret;
 				$newapp['scope'] = $scope;
-				$newapp['redirecturi'] = site_url();
+				$newapp['redirecturi'] = $redirecturi;
 				$newapp['ssoprotocol'] = $ssoprotocol;
 				$newapp['send_headers'] = $send_headers;
 				$newapp['send_body'] = $send_body;

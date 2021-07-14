@@ -64,8 +64,8 @@
 			wp_enqueue_style( 'mo_oauth_admin_settings_style', plugin_dir_url( dirname(__FILE__) ) . 'css/style_settings.css' );
 			wp_enqueue_style( 'mo_oauth_admin_settings_font_awesome', plugin_dir_url( dirname(__FILE__) ) . 'css/font-awesome.css' );
 			?>
-			<tr><td><strong>Redirect / Callback URL</strong><br>&emsp;<font><small>Editable in <a href="admin.php?page=mo_oauth_settings&tab=licensing" target="_blank" rel="noopener noreferrer">[STANDARD]</a></small></font></td>
-			<td><input class="mo_table_textbox" id="callbackurl"  type="text" readonly="true" value='<?php echo site_url()."";?>'>
+			<tr><td><strong>Redirect / Callback URL</strong></td>
+			<td><input class="mo_table_textbox" id="mo_oauth_redirecturi"  name="mo_oauth_redirecturi" type="text" value="" placeholder='<?php if(isset($currentapp->redirecturi)) { echo $currentapp->redirecturi; }else echo site_url()."";?>'>
 			&nbsp;&nbsp;
 			<div class="tooltip" style="display: inline;"><span class="tooltiptext" id="moTooltip">Copy to clipboard</span><i class="fa fa-clipboard fa-border" style="font-size:20px; align-items: center;vertical-align: middle;" aria-hidden="true" onclick="copyUrl()" onmouseout="outFunc()"></i></div>
 			</td>
