@@ -65,7 +65,7 @@
 			wp_enqueue_style( 'mo_oauth_admin_settings_font_awesome', plugin_dir_url( dirname(__FILE__) ) . 'css/font-awesome.css' );
 			?>
 			<tr><td><strong>Redirect / Callback URL</strong></td>
-			<td><input class="mo_table_textbox" id="mo_oauth_redirecturi"  name="mo_oauth_redirecturi" type="text" value="" placeholder='<?php if(isset($currentapp->redirecturi)) { echo $currentapp->redirecturi; }else echo site_url()."";?>'>
+			<td><input class="mo_table_textbox" id="mo_oauth_redirecturi"  name="mo_oauth_redirecturi" type="text" value='<?php if(isset($currentapp->redirecturi)) { echo $currentapp->redirecturi; }else echo site_url()."";?>'>
 			&nbsp;&nbsp;
 			<div class="tooltip" style="display: inline;"><span class="tooltiptext" id="moTooltip">Copy to clipboard</span><i class="fa fa-clipboard fa-border" style="font-size:20px; align-items: center;vertical-align: middle;" aria-hidden="true" onclick="copyUrl()" onmouseout="outFunc()"></i></div>
 			</td>
@@ -88,7 +88,7 @@
 			</tr>
 			<tr>
 				<td><strong>Scope:</strong></td>
-				<td><input class="mo_table_textbox" type="text" name="mo_oauth_scope" value="<?php if(isset($currentapp->scope)) echo $currentapp->scope;?>"></td>
+				<td><input class="mo_table_textbox" type="text" id="mo_oauth_scope" name="mo_oauth_scope" value="<?php if(isset($currentapp->scope)) echo $currentapp->scope;?>"></td>
 			</tr>
 			<tr id="mo_oauth_authorizeurl_div">
 				<td><strong><font color="#FF0000">*</font>Authorize Endpoint:</strong></td>

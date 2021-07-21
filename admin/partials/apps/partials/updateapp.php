@@ -62,7 +62,7 @@
 			</tr>
 			<tr>
 				<td><strong>Scope:</strong></td>
-				<td><input class="mo_table_textbox" type="text" name="mo_oauth_scope" value="<?php echo $currentapp['scope'];?>"></td>
+				<td><input class="mo_table_textbox" type="text" id="mo_oauth_scope" name="mo_oauth_scope" value="<?php echo $currentapp['scope'];?>"></td>
 			</tr>
 			<?php if($is_other_app){ ?>
 			<tr  id="mo_oauth_authorizeurl_div">

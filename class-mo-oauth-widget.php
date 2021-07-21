@@ -210,7 +210,7 @@ class Mo_OpenIDConnect_Widget extends WP_Widget {
 								$logo_class='fa fa-windows';
 							}
 							$temp .= '<a style="text-decoration:none" href="javascript:void(0)" onClick="moOAuthLoginNew(\''.$key.'\');"><div class="mo_oauth_login_button_widget"><i class="'.$logo_class.' mo_oauth_login_button_icon_widget"></i><h3 class="mo_oauth_login_button_text_widget">Login with '.ucwords($key).'</h3></div></a>';
-                            if ( $app['appId']=='swissid') {
+                            if ( $app['appId']=='swissid' || $app['appId']=='swissidtest') {
                                 $logo_class='swissid-btn-connect';
                                 $temp = '<button type="button" class="swissid-btn swissid-btn-primary swissid-btn-connect" href="javascript:void(0)" onClick="moOAuthLoginNew(\''.$key.'\');"><span class="connect" aria-hidden="true"></span>Login with '.ucwords($key).'</button>';
 
