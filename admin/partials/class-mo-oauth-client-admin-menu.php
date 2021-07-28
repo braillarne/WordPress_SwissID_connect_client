@@ -89,7 +89,7 @@ class Mo_OAuth_Client_Admin_Menu {
 	
 	public static function show_menu($currenttab) {
 		?> <div class="wrap">
-			<div><img style="float:left;" src="<?php echo dirname(plugin_dir_url( __FILE__ ));?>/images/logo.png"></div>
+			<div><img style="float:left;" src="<?php echo dirname(plugin_dir_url( __FILE__ ));?>/images/swissid_logo.png"></div>
 		</div>
 		        <div class="wrap">
             <h1>
@@ -104,11 +104,11 @@ class Mo_OAuth_Client_Admin_Menu {
                     update_option('mo_saml_license_message', '');
                     ?>
 
-                miniOrange OAuth/OpenID Connect Single Sign On&nbsp
-                <a id="license_upgrade" class="add-new-h2 add-new-hover" style="background-color: orange !important; border-color: orange; font-size: 16px; color: #000;" href="<?php echo add_query_arg( array( 'tab' => 'licensing' ), htmlentities( $_SERVER['REQUEST_URI'] ) ); ?>">Premium plans</a>
+                SwissID OICD Integrator | Settings
+                <!--<a id="license_upgrade" class="add-new-h2 add-new-hover" style="background-color: orange !important; border-color: orange; font-size: 16px; color: #000;" href="<?php echo add_query_arg( array( 'tab' => 'licensing' ), htmlentities( $_SERVER['REQUEST_URI'] ) ); ?>">Premium plans</a>
                 <a class="add-new-h2" href="https://faq.miniorange.com/kb/oauth-openid-connect/" target="_blank">Troubleshooting</a>
                 <a class="add-new-h2" href="https://forum.miniorange.com/" target="_blank">Ask questions on our forum</a>
-                <a id="features_button_id" class="add-new-h2" href="https://developers.miniorange.com/docs/oauth/wordpress/client" target="_blank">Feature Details</a>
+                <a id="features_button_id" class="add-new-h2" href="https://developers.miniorange.com/docs/oauth/wordpress/client" target="_blank">Feature Details</a>-->
                 <!--?php } ?-->
 
 			</h1>
@@ -126,15 +126,15 @@ class Mo_OAuth_Client_Admin_Menu {
         </style>
 		<div id="tab">
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab <?php if($currenttab == 'config') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=config">Configure OpenID Connect</a>
+			<a class="nav-tab <?php if($currenttab == 'config') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=config">Configure Provider</a>
 			<?php if(get_option('mo_oauth_eveonline_enable') == 1 ){?><a class="nav-tab <?php if($currenttab == 'mo_oauth_eve_online_setup') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_eve_online_setup">Advanced EVE Online Settings</a><?php } ?>
 			<a class="nav-tab <?php if($currenttab == 'attributemapping') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=attributemapping">Attribute/Role Mapping</a>
-			<a class="nav-tab <?php if($currenttab == 'signinsettings') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=signinsettings">Login Settings</a>
+			<!--<a class="nav-tab <?php if($currenttab == 'signinsettings') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=signinsettings">Login Settings</a>
 			<a class="nav-tab <?php if($currenttab == 'customization') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=customization">Login Button Customization</a>
 			<a class="nav-tab <?php if($currenttab == 'requestfordemo') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=requestfordemo">Request For Demo</a>	
-			<!-- <a class="nav-tab <?php //if($currenttab == 'faq') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=faq">Frequently Asked Questions [FAQ]</a>	 -->
+			<a class="nav-tab <?php //if($currenttab == 'faq') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=faq">Frequently Asked Questions [FAQ]</a>
 			<a class="nav-tab <?php if($currenttab == 'account') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=account">Account Setup</a>
-            <a class="nav-tab <?php if($currenttab == 'addons') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=addons">Add-ons</a>
+            <a class="nav-tab <?php if($currenttab == 'addons') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=addons">Add-ons</a>-->
 			<!-- <a class="nav-tab <?php //if($currenttab == 'licensing') echo 'nav-tab-active';?>" href="admin.php?page=mo_oauth_settings&tab=licensing">Licensing Plans</a> -->
 		</h2>
 		</div> 

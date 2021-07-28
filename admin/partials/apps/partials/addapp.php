@@ -26,9 +26,9 @@
 							";							
 						}
 					} else { ?>
-						<td align="right"><span style="position: relative; float: right;padding-left: 13px;padding-right:13px;background-color:white;border-radius:4px;">
+						<!--<td align="right"><span style="position: relative; float: right;padding-left: 13px;padding-right:13px;background-color:white;border-radius:4px;">
 							<button type="button" id="restart_tour_id" class="button button-primary button-large" onclick="jQuery('#show_pointers').submit();"><i class="fa fa-refresh"></i>Restart Tour</button>
-						</span></td> <?php
+						</span></td> --><?php
 					}
 
 				?>

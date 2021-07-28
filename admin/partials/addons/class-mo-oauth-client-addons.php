@@ -109,7 +109,7 @@ h5 {
     <div class="grid_view column_container">
       <div class="column_inner">
         <div class="row benefits-outer-block">
-          <img src="<?php echo plugins_url("images/buddypress-logo.png", __FILE__) ?>" width="40px" height="40px">
+          <img src="<?php echo plugins_url("images/buddypress-swissid_logo.png", __FILE__) ?>" width="40px" height="40px">
           <h5 style="margin-top:1em;">BuddyPress Integrator</h5>
           <p>Allows to integrate user information received from OAuth/OpenID Provider with the BuddyPress profile.</p>
         </div>

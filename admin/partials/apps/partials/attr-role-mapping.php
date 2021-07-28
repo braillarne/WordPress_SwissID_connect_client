@@ -86,16 +86,16 @@ function attribite_role_mapping_ui(){
 			
 			
 		<?php
-		echo '<tr>
+		echo '<!--<tr>
 			<td></td><td>
             <b><p style="margin-left:2px" class=" mop_table">
             Advanced attribute mapping is available in <a href="admin.php?page=mo_oauth_settings&amp;tab=licensing">premium</a> version.</b>
             </p>
 			</td>
-		</tr>
+		</tr>-->
         <tr id="mo_oauth_name_attr_div">
 				<td><strong>First Name:</strong></td>
-				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" disabled  type="text" value=""></td>
+				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" value=""></td>
 			</tr>
 		<tr>
 			<td><strong>Last Name:</strong></td>
@@ -119,7 +119,7 @@ function attribite_role_mapping_ui(){
 			</td></tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr><td colspan="3"><hr></td></tr>
-			<tr>
+			<!--<tr>
 				<td colspan="2">
 					<strong>
 						<input disabled type="checkbox"> Keep Existing User Attributes
@@ -150,7 +150,7 @@ function attribite_role_mapping_ui(){
 			<td><input disabled type="button" value="-" class="button button-primary"   /></td></tr>
 			<tr class="rows"><td><input disabled type="text" placeholder="Enter field meta name" /></td>
 			<td><input disabled type="text" placeholder="Enter attribute name from OAuth Provider"  class="mo_table_textbox" /></td>
-			</tr>';
+			</tr>-->';
 			?>
 			</table>
 			<br>
@@ -160,7 +160,7 @@ function attribite_role_mapping_ui(){
 		</form>
 		</div>
 
-		<div class="mo_table_layout" id="role-mapping">
+		<!--<div class="mo_table_layout" id="role-mapping">
 		<h3>Role Mapping <a href="admin.php?page=mo_oauth_settings&tab=licensing" target="_blank" rel="noopener noreferrer" style="font-size: x-small;">[PREMIUM]</a></small></h3>
 		<b>NOTE: </b>Role will be assigned only to non-admin users (user that do NOT have Administrator privileges). You will have to manually change the role of Administrator users.<br>
 		<form id="role_mapping_form" name="f" method="post" action="">
@@ -211,7 +211,7 @@ function attribite_role_mapping_ui(){
 				</table>
 				</div>
 			</form>
-		</div>
+		</div>-->
 <?php
 }
 
