@@ -894,7 +894,7 @@ function update_app($appname){
 			</tr>
 			<tr id="mo_oauth_name_attr_div">
 				<td><strong><font color="#FF0000">*</font>First Name:</strong></td>
-				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" id="mo_oauth_name_attr" name="mo_oauth_name_attr" value="<?php if(isset( $currentapp['name_attr'])) echo $currentapp['name_attr'];?>"></td>
+				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" id="mo_oauth_firstname_attr" name="mo_oauth_firstname_attr" value="<?php if(isset( $currentapp['firstname_attr'])) echo $currentapp['firstname_attr'];?>"></td>
 			</tr>
 			
 			
