@@ -68,6 +68,7 @@ function attribite_role_mapping_ui(){
 						</script>
 						<input type="hidden" id="mo_attr_option" name="mo_attr_option" value="<?php if(get_option('mo_attr_option')){ echo get_option('mo_attr_option'); } else { echo "automatic"; } ?>">
 						<input <?php if (get_option('mo_attr_option') === "manual" ) echo 'name="mo_oauth_username_attr"'; ?> class="mo_table_textbox" <?php if (get_option('mo_attr_option') === "automatic" || get_option('mo_attr_option') === false ) echo 'style="display:none"'; ?> placeholder="Enter attribute name for Username" type="text" id="mo_oauth_username_attr_input" value="<?php if( isset( $currentapp['username_attr'] ) )echo $currentapp['username_attr']; else if( isset( $currentapp['email_attr'] ) )echo $currentapp['email_attr'];?>">
+						<input <?php if (get_option('mo_attr_option') === "manual" ) echo 'name="mo_oauth_firstname_attr"'; ?> class="mo_table_textbox" <?php if (get_option('mo_attr_option') === "automatic" || get_option('mo_attr_option') === false ) echo 'style="display:none"'; ?> placeholder="Enter attribute name for Firstname" type="text" id="mo_oauth_firstname_attr_input" value="<?php if( isset( $currentapp['firstname_attr'] ) )echo $currentapp['firstname_attr'];?>">
 						</td>
 						<?php $text_attr = get_option('mo_attr_option') ? get_option('mo_attr_option') === "manual" ? "Change to automatic mode" : "Change to manual mode" : "Change to manual mode"; ?>
 						<td>
@@ -76,6 +77,7 @@ function attribite_role_mapping_ui(){
 						<?php
 					} else { ?>
 						<input class="mo_table_textbox" required="" placeholder="Enter attribute name for Username" type="text" id="mo_oauth_username_attr_input" name="mo_oauth_username_attr" value="<?php if( isset( $currentapp['username_attr'] ) )echo $currentapp['username_attr']; else if( isset( $currentapp['email_attr'] ) )echo $currentapp['email_attr'];?>">
+						<input class="mo_table_textbox" required="" placeholder="Enter attribute name for Firstname" type="text" id="mo_oauth_firstname_attr_input" name="mo_oauth_firstname_attr" value="<?php if( isset( $currentapp['firstname_attr'] ) )echo $currentapp['firstname_attr'];?>">
 						</td>
 						<td>
 						</td>
@@ -93,11 +95,7 @@ function attribite_role_mapping_ui(){
             </p>
 			</td>
 		</tr>-->
-        <tr id="mo_oauth_name_attr_div">
-				<td><strong>First Name:</strong></td>
-				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" id="mo_oauth_firstname_attr_input" name="mo_oauth_firstname_attr" value="';if( isset( $currentapp['firstname_attr'] ) )echo $currentapp['firstname_attr']; echo '"></td>
-			</tr>
-		<tr>
+        
 			<td><strong>Last Name:</strong></td>
 			<td>
 				<input type="text" class="mo_table_textbox" placeholder="Enter attribute name for Last Name"  disabled /></td>
