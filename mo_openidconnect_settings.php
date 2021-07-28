@@ -1,13 +1,13 @@
 <?php
 /**
-* Plugin Name: OpenID Connect Login ( OpenID Connect Client)
-* Plugin URI: http://miniorange.com
-* Description: OpenID Connect Client plugin allows login (Single Sign On) with any OpenID provider that conforms to the OpenID Connect 1.0 standard.
+* Plugin Name: SwissID OIDC Integrator
+* Plugin URI: http://swissiddemo.ch
+* Description: OpenID connect integrator for SwissID
 * Version: 2.1.4
-* Author: miniOrange
-* Author URI: https://www.miniorange.com
+* Author: SwissSign Group AG
+* Author URI: https://www.swisssign.com/
 * License: MIT/Expat
-* License URI: https://docs.miniorange.com/mit-license
+* License URI: https://swissiddemo.ch/
 */
 
 require('handler/oauth_handler.php');

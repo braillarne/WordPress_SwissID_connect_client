@@ -136,7 +136,7 @@
 		</div>
 		</div>
 		<?php
-		grant_type_settings();
+		//grant_type_settings();
 	}
 
 

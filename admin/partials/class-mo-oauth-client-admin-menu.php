@@ -34,7 +34,7 @@ function mo_oauth_client_main_menu() {
 		
 				Mo_OAuth_Client_Admin_Menu::show_tab($currenttab);
 				
-				Mo_OAuth_Client_Admin_Menu::show_support_sidebar($currenttab);
+				//Mo_OAuth_Client_Admin_Menu::show_support_sidebar($currenttab);
 				echo '</tr>
 				</table>
 				<div class="mo_tutorial_overlay" id="mo_tutorial_overlay" hidden></div>
@@ -202,13 +202,13 @@ class Mo_OAuth_Client_Admin_Menu {
 		//}
 	}
 	
-	public static function show_support_sidebar($currenttab) { 
+	/*public static function show_support_sidebar($currenttab) {
 		if($currenttab != 'licensing') { 
 			echo '<td style="vertical-align:top;padding-left:1%;" class="mo_oauth_sidebar">';
 			echo Mo_OAuth_Client_Admin_Support::support();
 			echo '</td>';
 		}
-	}
+	}*/
 		
 }
 

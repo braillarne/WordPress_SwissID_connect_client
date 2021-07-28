@@ -1,6 +1,6 @@
 === WordPress OpenID Connect Client ===
 Contributors: cyberlord92
-Tags: openid, sso, openid connect, oidc, openidconnect
+Tags: swissid, openid, sso, openid connect, oidc, openidconnect
 Requires at least: 3.0.1
 Tested up to: 5.7
 Stable tag: 2.1.4
