@@ -512,7 +512,11 @@ class mo_openidconnect {
 					$authorizeurl = "https://login.live.com/oauth20_authorize.srf";
 					$accesstokenurl = "https://login.live.com/oauth20_token.srf";
 					$resourceownerdetailsurl = "https://apis.live.net/v5.0/me";
-				} else if($appname=="eveonline"){
+				}   else if($appname=="swissidtest"){
+                    $resourceownerdetailsurl = "https://account.sandbox.pre.swissid.ch/idp/oauth2/userinfo";
+                }   else if($appname=="swissid"){
+                    $resourceownerdetailsurl = "https://account.swissid.ch/idp/oauth2/userinfo";
+                }   else if($appname=="eveonline"){
 					update_option( 'mo_oauth_eveonline_enable', 1);
 					update_option( 'mo_oauth_eveonline_client_id', $clientid);
 					update_option( 'mo_oauth_eveonline_client_secret', $clientsecret);
@@ -560,7 +564,8 @@ class mo_openidconnect {
 						$newapp['resourceownerdetailsurl'] = "https://www.googleapis.com/oauth2/v1/userinfo";
 					}
 				}
-				//$newapp['email_attr'] = $email_attr;
+                $newapp['resourceownerdetailsurl'] = $resourceownerdetailsurl;
+                    //$newapp['email_attr'] = $email_attr;
 				//$newapp['name_attr'] = $name_attr;
 				$appslist[$appname] = $newapp;
 				update_option('mo_oauth_apps_list', $appslist);

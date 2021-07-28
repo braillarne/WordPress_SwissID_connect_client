@@ -108,6 +108,12 @@
 					<td><input class="mo_table_textbox" <?php if(!isset($currentapp->type) || $currentapp->type=='oauth') echo 'required';?> type="text" id="mo_oauth_resourceownerdetailsurl" name="mo_oauth_resourceownerdetailsurl" value="<?php if(isset($currentapp->userinfo)) echo $currentapp->userinfo;?>"></td>
 				</tr>
 			<?php } ?>
+            <?php if($currentAppId=='swissid' || $currentAppId=='swissidtest') {?>
+                <tr id="mo_oauth_resourceownerdetailsurl_div">
+                    <td><strong><font color="#FF0000">*</font>Get User Info Endpoint:</strong></td>
+                    <td><input class="mo_table_textbox" <?php if(!isset($currentapp->type) || $currentapp->type=='oauth') echo 'required';?> type="text" id="mo_oauth_resourceownerdetailsurl" name="mo_oauth_resourceownerdetailsurl" value="<?php if(isset($currentapp->userinfo)) echo $currentapp->userinfo;?>"></td>
+                </tr>
+            <?php } ?>
 			<tr>
 				<td><strong>Login button:</strong></td>
 				<td><div style="padding:5px;"></div><input type="checkbox" name="mo_oauth_show_on_login_page" value ="1" checked/>&nbsp;&nbsp;Show on login page</td>
