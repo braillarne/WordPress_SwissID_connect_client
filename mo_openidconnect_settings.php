@@ -585,6 +585,7 @@ class mo_openidconnect {
 		else if( isset( $_POST['option'] ) and $_POST['option'] == "mo_oauth_attribute_mapping" ) {
 			$appname = stripslashes( $_POST['mo_oauth_app_name'] );
 			$username_attr = stripslashes( $_POST['mo_oauth_username_attr'] );
+			$firstname_attr = stripslashes( $_POST['mo_oauth_firstname_attr'] );
 			$attr_option = stripslashes( $_POST['mo_attr_option'] );
 			if ( empty( $appname ) ) {
 				update_option( 'message', 'You MUST configure an application before you map attributes.' );
@@ -595,6 +596,7 @@ class mo_openidconnect {
 			foreach($appslist as $key => $currentapp){
 					if($appname == $key){
 						$currentapp['username_attr'] = $username_attr;
+						$currentapp['firstname_attr'] = $firstname_attr;
 						$appslist[$key] = $currentapp;
 					break;
 				}

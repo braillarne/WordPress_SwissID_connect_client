@@ -37,7 +37,7 @@ function attribite_role_mapping_ui(){
 							<?php 
 						foreach ( $attr_name_list as $key => $value ) {
 								echo "<option value='".$value."'";
-								if( ( isset( $currentapp['username_attr'] ) && $currentapp['username_attr'] === $value ) ||  ( isset( $currentapp['email_attr'] ) && $currentapp['email_attr'] === $value ) ) {
+								if( ( isset( $currentapp['username_attr'] ) && $currentapp['username_attr'] === $value ) ||  ( isset( $currentapp['email_attr'] ) && $currentapp['email_attr'] === $value ) ||  ( isset( $currentapp['firstname_attr'] ) && $currentapp['firstname_attr'] === $value )) {
 									echo " selected";
 								}
 								else echo "";
@@ -95,7 +95,7 @@ function attribite_role_mapping_ui(){
 		</tr>-->
         <tr id="mo_oauth_name_attr_div">
 				<td><strong>First Name:</strong></td>
-				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" value=""></td>
+				<td><input class="mo_table_textbox" required="" placeholder="Enter attribute name for First Name" type="text" id="mo_oauth_firstname_attr_input" name="mo_oauth_firstname_attr" value="';if( isset( $currentapp['firstname_attr'] ) )echo $currentapp['firstname_attr']; echo '"></td>
 			</tr>
 		<tr>
 			<td><strong>Last Name:</strong></td>

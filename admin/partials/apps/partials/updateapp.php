@@ -38,10 +38,10 @@
 		<input class="mo_table_textbox" required="" type="hidden" name="mo_oauth_custom_app_name" value="<?php echo $currentappname;?>">
 			
 			<table class="mo_settings_table">
-			<tr id="mo_oauth_display_app_name_div">
+			<!--<tr id="mo_oauth_display_app_name_div">
 				<td><strong>Display App Name:</strong><br>&emsp;<font color="#FF0000"><small><a href="admin.php?page=mo_oauth_settings&tab=licensing" target="_blank" rel="noopener noreferrer">[STANDARD]</a></small></font></td>
 				<td><input disabled class="mo_table_textbox" type="text" value="Login with <?php echo $currentappname;?>"></td>
-			</tr>
+			</tr>-->
 			<?php 
 			wp_enqueue_style( 'mo_oauth_admin_settings_style', plugin_dir_url( dirname(__FILE__) ) . 'css/style_settings.css' );
 			wp_enqueue_style( 'mo_oauth_admin_settings_font_awesome', plugin_dir_url( dirname(__FILE__) ) . 'css/font-awesome.css' );
@@ -88,14 +88,14 @@
 					<td><input class="mo_table_textbox" type="text" id="mo_oauth_resourceownerdetailsurl" name="mo_oauth_resourceownerdetailsurl" <?php if($oidc === false) { echo 'required';} ?> value="<?php if(isset($currentapp['resourceownerdetailsurl'])) { echo $currentapp['resourceownerdetailsurl']; } ?>"></td>
 				</tr>			
             
-            <tr>
+            <!--<tr>
 				<td><strong>Group User Info Endpoint:</strong><br>&emsp;<font color="#FF0000"><small><a href="admin.php?page=mo_oauth_settings&tab=licensing" target="_blank" rel="noopener noreferrer">[PREMIUM]</a></small></font></td>
 				<td><input class="mo_table_textbox" type="text" value="" disabled></td>
 			</tr>
 			<tr>
 				<td><strong>JWKS URL:</strong><br>&emsp;<font color="#FF0000"><small><a href="admin.php?page=mo_oauth_settings&tab=licensing" target="_blank" rel="noopener noreferrer">[PREMIUM]</a></small></font></td>
 				<td><input class="mo_table_textbox" type="text" value="" disabled></td>
-			</tr>
+			</tr>-->
             
 			<tr>
 				<td><strong>login button:</strong></td>
@@ -120,12 +120,12 @@
 				</td>
 			</tr>
 			<tr></tr>
-			<tr>
+			<!--<tr>
 				<td><strong>Note:</strong></td>
 				<td colspan="2">
 					<b>Please configure <a href='admin.php?page=mo_oauth_settings&tab=attributemapping'>Attribute Mapping</a> before trying Single Sign-On.</b>
 				</td>
-			</tr>
+			</tr>-->
 		</table>
 		</form>
 		</div>
@@ -144,5 +144,5 @@
 		}
 		</script>
 		<?php }
-		grant_type_settings();
+		//grant_type_settings();
 }
