@@ -423,6 +423,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 						$resourceOwner = $mo_oauth_handler->getResourceOwner($resourceownerdetailsurl, $accessToken);
 					}
 					$username = "";
+					$given_name = "";
 					update_option('mo_oauth_attr_name_list', $resourceOwner);
 					//TEST Configuration
 					if(isset($_COOKIE['mo_oauth_test']) && $_COOKIE['mo_oauth_test']){
@@ -437,6 +438,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 
 					if(!empty($username_attr))
 						$username = getnestedattribute($resourceOwner, $username_attr); //$resourceOwner[$email_attr];
+						$given_name = getnestedattribute($resourceOwner, "given_name"); //$resourceOwner[$email_attr];
 
 					if(empty($username) || "" === $username)
 						exit('Username not received. Check your <b>Attribute Mapping</b> configuration.');
@@ -454,9 +456,9 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					} else {
 						$user_id = 0;
 						if(mo_oauth_hbca_xyake()) {
-								$user = mo_oauth_jhuyn_jgsukaj($username);
+								$user = mo_oauth_jhuyn_jgsukaj($username, $given_name);
 						} else {
-							$user = mo_oauth_hjsguh_kiishuyauh878gs($username);
+							$user = mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name);
 						}
 						
 					}
@@ -652,7 +654,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		/* End of old flow */
 	}
 
-	function mo_oauth_hjsguh_kiishuyauh878gs($username)
+	function mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name)
 	{
         console.log("Message here2");
         $random_password = wp_generate_password( 10, false );
@@ -662,7 +664,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
         // 	$user_id = wp_create_user( $email, $random_password);
         $user_id = 	wp_create_user( $username, $random_password);
         $user = get_user_by( 'login', $username);
-        wp_update_user( array( 'ID' => $user_id , 'first_name' => $_POST['given_name']) );
+        wp_update_user( array( 'ID' => $user_id , 'first_name' => $given_name) );
 		return $user;
 	}
 
@@ -692,10 +694,10 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		return $valid_entity;
 	}
 
-	function mo_oauth_jhuyn_jgsukaj($temp_var)
+	function mo_oauth_jhuyn_jgsukaj($temp_var, $temp_givenname)
 	{
         console.log("Message here17");
-		return mo_oauth_jkhuiysuayhbw($temp_var);
+		return mo_oauth_jkhuiysuayhbw($temp_var, $temp_givenname);
 	}
 
 	function testattrmappingconfig($nestedprefix, $resourceOwnerDetails){
@@ -734,10 +736,10 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		}
 	}
 
-	function mo_oauth_jkhuiysuayhbw($ejhi)
+	function mo_oauth_jkhuiysuayhbw($ejhi, $giv)
 	{
         console.log("Message here20");
-		$user = mo_oauth_hjsguh_kiishuyauh878gs($ejhi);						
+		$user = mo_oauth_hjsguh_kiishuyauh878gs($ejhi, $giv);
 		return $user;
 	}
 
