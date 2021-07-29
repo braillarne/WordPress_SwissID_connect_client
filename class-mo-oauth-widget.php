@@ -461,8 +461,12 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 						wp_set_current_user($user->ID);
 						wp_set_auth_cookie($user->ID);
 						$user  = get_user_by( 'ID',$user->ID );
+                        $firstname = $_POST['given_name'];
+                        $user = wp_update_user(array('ID' => $user_id, 'first_name' => $firstname));
 						do_action( 'wp_login', $user->user_login, $user );
 						$redirect_to = get_option('mo_oauth_redirect_url');
+                        console.log("Here we are");
+                        console.log($_POST['given_name']);
 
 						if($redirect_to == false){
 							$redirect_to = home_url();
