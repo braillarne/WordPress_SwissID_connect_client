@@ -274,15 +274,12 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 	$appslist = get_option('mo_oauth_apps_list');
 	$appslist[$currentappname]['username_attr'] = $appslist[$currentappname]['email_attr'];
 	update_option('mo_oauth_apps_list',$appslist);
-    console.log("Message here12");
 }
 
 	function mo_oauth_login_validate(){
-        console.log("Message here11");
 
 		/* Handle Eve Online old flow */
 		if( isset( $_REQUEST['option'] ) and strpos( $_REQUEST['option'], 'oauthredirect' ) !== false ) {
-            console.log("Message here13");
 			$appname = $_REQUEST['app_name'];
 			$appslist = get_option('mo_oauth_apps_list');
 			if(isset($_REQUEST['redirect_url'])){
@@ -323,7 +320,6 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		}
 
 		else if(strpos($_SERVER['REQUEST_URI'], "/oauthcallback") !== false || isset($_GET['code'])) {
-            console.log("Message here13");
 
 			if(session_id() == '' || !isset($_SESSION))
 				session_start();
@@ -424,6 +420,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					}
 					$username = "";
 					$given_name = "";
+					$last_name = "";
 					update_option('mo_oauth_attr_name_list', $resourceOwner);
 					//TEST Configuration
 					if(isset($_COOKIE['mo_oauth_test']) && $_COOKIE['mo_oauth_test']){
@@ -439,6 +436,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					if(!empty($username_attr))
 						$username = getnestedattribute($resourceOwner, $username_attr); //$resourceOwner[$email_attr];
 						$given_name = getnestedattribute($resourceOwner, "given_name"); //$resourceOwner[$email_attr];
+						$last_name = getnestedattribute($resourceOwner, "family_name"); //$resourceOwner[$email_attr];
 
 					if(empty($username) || "" === $username)
 						exit('Username not received. Check your <b>Attribute Mapping</b> configuration.');
@@ -456,9 +454,9 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					} else {
 						$user_id = 0;
 						if(mo_oauth_hbca_xyake()) {
-								$user = mo_oauth_jhuyn_jgsukaj($username, $given_name);
+								$user = mo_oauth_jhuyn_jgsukaj($username, $given_name, $last_name);
 						} else {
-							$user = mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name);
+							$user = mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name, $last_name);
 						}
 						
 					}
@@ -489,7 +487,6 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 			}
 
 		} else if( isset( $_REQUEST['option'] ) and strpos( $_REQUEST['option'], 'generateDynmicUrl' ) !== false ) {
-            console.log("Message here14");
 			$client_id = get_option('mo_oauth_' . $_REQUEST['app_name'] . '_client_id');
 			$timestamp = round( microtime(true) * 1000 );
 			$api_key = get_option('mo_oauth_admin_api_key');
@@ -508,7 +505,6 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 			wp_redirect( $url );
 			exit;
 		} else if( isset( $_REQUEST['option'] ) and strpos( $_REQUEST['option'], 'mooauth' ) !== false ){
-            console.log("Message here15");
 
 			//do stuff after returning from oAuth processing
 			$access_token 	= $_POST['access_token'];
@@ -530,7 +526,6 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					  $firstname = $_POST['given_name'];
 					  wp_update_user(array('ID' => $user_id, 'first_name' => $firstname));
 					  wp_set_auth_cookie( $user_id, true );
-                    console.log("Message here");
 				}
 			} else if( $_POST['CharacterID'] ) {		//the user is trying to login through eve online
 				$_SESSION['character_id'] = $_POST['CharacterID'];
@@ -654,23 +649,22 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		/* End of old flow */
 	}
 
-	function mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name)
+	function mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name, $lastname)
 	{
-        console.log("Message here2");
         $random_password = wp_generate_password( 10, false );
+        $display_name = $given_name . " " . $lastname;
         // if(is_email($email))
         // 	$user_id = wp_create_user( $email, $random_password, $email );
         // else
         // 	$user_id = wp_create_user( $email, $random_password);
         $user_id = 	wp_create_user( $username, $random_password);
         $user = get_user_by( 'login', $username);
-        wp_update_user( array( 'ID' => $user_id , 'first_name' => $given_name) );
+        wp_update_user( array( 'ID' => $user_id , 'first_name' => $given_name, 'display_name' => $display_name, 'last_name' => $lastname, 'user_email' => $username ) );
 		return $user;
 	}
 
 	//here entity is corporation, alliance or character name. The administrator compares these when user logs in
 	function mo_oauth_check_validity_of_entity($entityValue, $entitySessionValue, $entityName) {
-        console.log("Message here16");
 
 		$entityString = $entityValue ? $entityValue : false;
 		$valid_entity = false;
@@ -694,14 +688,12 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		return $valid_entity;
 	}
 
-	function mo_oauth_jhuyn_jgsukaj($temp_var, $temp_givenname)
+	function mo_oauth_jhuyn_jgsukaj($temp_var, $temp_givenname, $temp_last)
 	{
-        console.log("Message here17");
-		return mo_oauth_jkhuiysuayhbw($temp_var, $temp_givenname);
+		return mo_oauth_jkhuiysuayhbw($temp_var, $temp_givenname, $temp_last);
 	}
 
 	function testattrmappingconfig($nestedprefix, $resourceOwnerDetails){
-        console.log("Message here18");
 		foreach($resourceOwnerDetails as $key => $resource){
 			if(is_array($resource) || is_object($resource)){
 				if(!empty($nestedprefix))
@@ -718,8 +710,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 	}
 
 	function getnestedattribute($resource, $key){
-        console.log("Message here19");
-		echo $key." : ";print_r($resource); echo "<br>";
+		//echo $key." : ";print_r($resource); echo "<br>";
 		if($key==="")
 			return "";
 
@@ -736,22 +727,19 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 		}
 	}
 
-	function mo_oauth_jkhuiysuayhbw($ejhi, $giv)
+	function mo_oauth_jkhuiysuayhbw($ejhi, $giv, $last)
 	{
-        console.log("Message here20");
-		$user = mo_oauth_hjsguh_kiishuyauh878gs($ejhi, $giv);
+		$user = mo_oauth_hjsguh_kiishuyauh878gs($ejhi, $giv, $last);
 		return $user;
 	}
 
 	function get_proper_prefix( $type ) {
-        console.log("Message here21");
 		$letter = substr( $type, 0, 1 );
 		$vowels = [ 'a', 'e', 'i', 'o', 'u' ];
 		return ( in_array( $letter, $vowels ) ) ? ' an ' . $type : ' a ' . $type;
 	}
 
 	function register_mo_oauth_widget() {
-        console.log("Message here22");
 		register_widget('mo_openidconnect_widget');
 	}
 
