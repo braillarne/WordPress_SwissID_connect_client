@@ -90,6 +90,10 @@
 				<td><strong>Scope:</strong></td>
 				<td><input class="mo_table_textbox" type="text" id="mo_oauth_scope" name="mo_oauth_scope" value="<?php if(isset($currentapp->scope)) echo $currentapp->scope;?>"></td>
 			</tr>
+            <tr>
+                <td></td>
+                <td><p>Minimal scope : openid email</p></td>
+            </tr>
 			<tr id="mo_oauth_authorizeurl_div">
 				<td><strong><font color="#FF0000">*</font>Authorize Endpoint:</strong></td>
 				<td><input class="mo_table_textbox" required type="text" id="mo_oauth_authorizeurl" name="mo_oauth_authorizeurl" value="<?php if(isset($currentapp->authorize)) echo $currentapp->authorize;?>"></td>

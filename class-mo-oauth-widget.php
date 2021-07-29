@@ -439,7 +439,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 						$last_name = getnestedattribute($resourceOwner, "family_name"); //$resourceOwner[$email_attr];
 
 					if(empty($username) || "" === $username)
-						exit('Username not received. Check your <b>Attribute Mapping</b> configuration.');
+						exit('Username not received. Check your <b>Scope</b> configuration.');
 					
 					if ( ! is_string( $username ) ) {
 						wp_die( 'Username is not a string. It is ' . get_proper_prefix( gettype( $username ) ) );

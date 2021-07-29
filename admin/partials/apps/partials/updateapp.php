@@ -64,6 +64,10 @@
 				<td><strong>Scope:</strong></td>
 				<td><input class="mo_table_textbox" type="text" id="mo_oauth_scope" name="mo_oauth_scope" value="<?php echo $currentapp['scope'];?>"></td>
 			</tr>
+                <tr>
+                    <td></td>
+                    <td><p>Minimal scope : openid email</p></td>
+                </tr>
 			<?php if($is_other_app){ ?>
 			<tr  id="mo_oauth_authorizeurl_div">
 				<td><strong><font color="#FF0000">*</font>Authorize Endpoint:</strong></td>
