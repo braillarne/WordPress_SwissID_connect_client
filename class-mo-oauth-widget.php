@@ -662,7 +662,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
         // 	$user_id = wp_create_user( $email, $random_password);
         $user_id = 	wp_create_user( $username, $random_password);
         $user = get_user_by( 'login', $username);
-        wp_update_user( array( 'ID' => $user_id ) );
+        wp_update_user( array( 'ID' => $user_id , 'first_name' => "test") );
 		return $user;
 	}
 
@@ -717,7 +717,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 
 	function getnestedattribute($resource, $key){
         console.log("Message here19");
-		//echo $key." : ";print_r($resource); echo "<br>";
+		echo $key." : ";print_r($resource); echo "<br>";
 		if($key==="")
 			return "";
 
