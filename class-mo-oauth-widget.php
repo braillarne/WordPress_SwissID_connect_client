@@ -434,7 +434,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 					}
 
 					if(!empty($username_attr))
-						$username = getnestedattribute($resourceOwner, $username_attr); //$resourceOwner[$email_attr];
+						$username = getnestedattribute($resourceOwner, "email"); //$resourceOwner[$email_attr];
 						$given_name = getnestedattribute($resourceOwner, "given_name"); //$resourceOwner[$email_attr];
 						$last_name = getnestedattribute($resourceOwner, "family_name"); //$resourceOwner[$email_attr];
 
