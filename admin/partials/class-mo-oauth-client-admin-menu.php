@@ -21,7 +21,7 @@ function mo_oauth_client_main_menu() {
 	Mo_OAuth_Client_Admin_Utils::curl_extension_check();	
 	Mo_OAuth_Client_Admin_Menu::show_menu($currenttab);
 	echo '<div id="mo_oauth_settings">';
-		Mo_OAuth_Client_Admin_Menu::show_idp_link($currenttab);
+		/*Mo_OAuth_Client_Admin_Menu::show_idp_link($currenttab);*/
 		if ( $today <= $date )
 			Mo_OAuth_Client_Admin_Menu::show_bfs_note();
 		echo '
