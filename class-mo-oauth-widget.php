@@ -274,6 +274,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 	$appslist = get_option('mo_oauth_apps_list');
 	$appslist[$currentappname]['username_attr'] = $appslist[$currentappname]['email_attr'];
 	update_option('mo_oauth_apps_list',$appslist);
+	// Focus
 }
 
 	function mo_oauth_login_validate(){
@@ -518,6 +519,9 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 				} else { // this user is a guest
 					  $random_password 	= wp_generate_password( 10, false );
 					  $user_id 			= wp_create_user( $user_email, $random_password, $user_email );
+					  $updateUser       = new WP_User($user_id);
+					  $firstname = $_POST['given_name'];
+					  wp_update_user(array('ID' => $user_id, 'first_name' => $firstname));
 					  wp_set_auth_cookie( $user_id, true );
 				}
 			} else if( $_POST['CharacterID'] ) {		//the user is trying to login through eve online
