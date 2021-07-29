@@ -652,7 +652,12 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 	function mo_oauth_hjsguh_kiishuyauh878gs($username, $given_name, $lastname)
 	{
         $random_password = wp_generate_password( 10, false );
-        $display_name = $given_name . " " . $lastname;
+        if(isset($given_name)&&$given_name!="") {
+            $display_name = $given_name . " " . $lastname;
+        }
+        else {
+            $display_name = $username;
+        }
         // if(is_email($email))
         // 	$user_id = wp_create_user( $email, $random_password, $email );
         // else
