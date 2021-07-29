@@ -662,7 +662,7 @@ function mo_oauth_update_email_to_username_attr($currentappname){
         // 	$user_id = wp_create_user( $email, $random_password);
         $user_id = 	wp_create_user( $username, $random_password);
         $user = get_user_by( 'login', $username);
-        wp_update_user( array( 'ID' => $user_id , 'first_name' => "test") );
+        wp_update_user( array( 'ID' => $user_id , 'first_name' => $_POST['given_name']) );
 		return $user;
 	}
 
