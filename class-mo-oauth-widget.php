@@ -433,10 +433,9 @@ function mo_oauth_update_email_to_username_attr($currentappname){
 						exit();
 					}
 
-					if(!empty($username_attr))
-						$username = getnestedattribute($resourceOwner, "email"); //$resourceOwner[$email_attr];
-						$given_name = getnestedattribute($resourceOwner, "given_name"); //$resourceOwner[$email_attr];
-						$last_name = getnestedattribute($resourceOwner, "family_name"); //$resourceOwner[$email_attr];
+					$username = getnestedattribute($resourceOwner, "email"); //$resourceOwner[$email_attr];
+                    $given_name = getnestedattribute($resourceOwner, "given_name"); //$resourceOwner[$email_attr];
+                    $last_name = getnestedattribute($resourceOwner, "family_name"); //$resourceOwner[$email_attr];
 
 					if(empty($username) || "" === $username)
 						exit('Username not received. Check your <b>Scope</b> configuration.');
