@@ -104,7 +104,7 @@ class Mo_OAuth_Client_Admin_Menu {
                     update_option('mo_saml_license_message', '');
                     ?>
 
-                SwissID OICD Integrator | Settings
+                SwissID OIDC Integrator | Settings
                 <!--<a id="license_upgrade" class="add-new-h2 add-new-hover" style="background-color: orange !important; border-color: orange; font-size: 16px; color: #000;" href="<?php echo add_query_arg( array( 'tab' => 'licensing' ), htmlentities( $_SERVER['REQUEST_URI'] ) ); ?>">Premium plans</a>
                 <a class="add-new-h2" href="https://faq.miniorange.com/kb/oauth-openid-connect/" target="_blank">Troubleshooting</a>
                 <a class="add-new-h2" href="https://forum.miniorange.com/" target="_blank">Ask questions on our forum</a>
