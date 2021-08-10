@@ -3,11 +3,11 @@
 * Plugin Name: SwissID OIDC Integrator
 * Plugin URI: http://swissiddemo.ch
 * Description: OpenID connect integrator for SwissID
-* Version: 2.1.4
+* Version: 1.0.0
 * Author: SwissSign Group AG
 * Author URI: https://www.swisssign.com/
 * License: MIT/Expat
-* License URI: https://swissiddemo.ch/
+* License URI: https://swissiddemo.ch/mit-license/
 */
 
 require('handler/oauth_handler.php');
